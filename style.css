@@ -1,0 +1,246 @@
+/*Padding: es el espacio que hay entre el contenido y el borde.
+Borde: lo que envuelve todo, es decir el padding y el contenido. Queda por fuera del padding.
+El tamaño total de una caja es: tamaño del contenido + tamaño del padding + tamaño del borde.
+Margen: separa la caja pero no influye en el tamaño de esta.
+Box-sizing: 
+    - Por defecto viene content-box, con esta propiedad el tamaño de la caja se calcula como se menciona arriba. El ancho y el alto que se define es unicamente del contenido.
+    - Border-box -> hace que el alto y el ancho que definimos sea el definitivo, es decir que va desde el borde hacia adentro (incorpora el borde, el padding y el contenido).
+Cuando se establece una medida en porcentaje, éste es relativo a su contenedor.    
+
+Position absolue: te permite definir las cordenadas donde se va a situar la caja de manera manual y donde vos quieras. Es decir la posición es absoluta respecto a la página.
+
+Position relative: te permite definir la posición de los elementos hijos respecto a su padre, definiendose en el padre la posición relativa.
+
+Position fixed: parecido al absolute pero queda fijo en la pantalla. Las coordenadas que se establecen son respecto a la pantalla.
+
+Postion sticky: va a tratar de dejar siempre la caja dentro del contenedor padre. No es una posición fija.
+
+z-index: propiedad que define el nivel de apilamiento. Recordar que para hacer uso de esta propiedad hay que creaer un contexto de apilamiento.
+
+FLEX: propiedad que establece como tiene que funcionar el contenedor respecto a sus hijos. Se usa en el contenedor padre. Se trabaja en un único eje, puede ser horizontal (rows) o vertical (columns).
+flex-direction: row o column
+flex-wrap: 
+    -nowrap -> adedcúa los hijos al contenedor, si no entran los va a achicar de tal manera que quepan.
+    -wrap -> le permite al contenedor, si no caben los hijos, hacer un salto de linea.
+flex: 1 -> permite que los elementos se agranden o se achiquen dependiendo del contenedor. Tambien actua como una medida relativa.
+gap: establece el espacio entre los elementos.
+justify-content: define como se distribuye el contenido en el eje principal (eje X).
+align-content: define como se distribuye el contenido en el eje cruzado (eje Y).
+*/
+h1, h2 {
+    font-family: 'Montserrat', sans-serif; /* O la fuente que prefieras */
+}
+h2{
+    color: #FF4C4C;
+}
+p {
+    font-family: 'Roboto', sans-serif; /* Fuente para el cuerpo del texto */
+}
+
+body{
+    background-color: #1F1F1F;
+}
+
+.cabecera{
+    display: flex;
+    flex: 8;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;    
+    background-color: #1f1f1fc9;
+    font-size: 16px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border: 2px solid #FF4C4C;
+    border-radius: 8px;
+    z-index: 1000;
+    top: 0;
+    position: sticky;
+}
+
+#titulo{
+    margin-left: 20px;
+    padding: 0px 8px;
+    font-size: 2rem;
+    border-radius: 6px;
+    color: #FF4C4C;
+}
+
+#titulo:hover{
+    border: 0;
+    scale: 1.1;
+    color: #39FF14;
+    cursor: pointer;
+}
+.nav_menu{
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    gap: 4px;  
+    margin-right: 10px;
+}
+
+.anchor_button{
+    font-size: 1.2rem;
+    padding: 4px;
+    border-radius: 6px;
+    border: 0;
+    color: #FF4C4C;
+    background-color: transparent;
+} 
+
+.anchor_button:hover{
+    border: 0;
+    scale: 1.1;
+    color: #39FF14;
+    cursor: pointer;
+}
+
+#container_aboutme{
+    display: flex;
+    justify-content: space-around;
+    height: 250px;
+    width: 100%;
+}
+#aboutme{
+    flex: 7;
+    margin-right: 12px;
+    border: 0;
+    border-radius: 16px 0px 0px 16px;
+    width: 70vw;
+    font-size: 1rem;
+    color: black;
+}
+#h2_aboutme{
+    text-align: center;
+    animation: moveWord 3.5s linear infinite alternate;
+    font-size: 2rem;
+    color: #FF4C4C;
+}
+@keyframes moveWord {
+    0% {
+        transform: translateX(-50px); 
+    }
+    25% {
+        transform: translateX(-25px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    75%{
+        transform: translateX(25px);
+    }
+    100% {
+        transform: translateX(50px);
+    }
+}
+#img_aboutme{
+    display: flex;
+    flex: 3;
+    border: 0;
+    border-radius: 0px 16px 16px 0px;
+    width: 30vw;
+}
+#img_tomas{    
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0px 16px 16px 0px;
+}
+
+
+.seccion{
+    background-color: #F5F5F5;
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+#seccion_contacto{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    align-items: center;
+    color: #FF4C4C;
+}
+
+form{
+    padding: 0px 10px 0px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: black;
+}
+
+#boton_enviar{
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid black;
+    color: #FF4C4C;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#boton_enviar:hover{
+    
+    color: #39FF14;
+}
+
+.form_div{
+    padding-bottom: 6px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.entrada{
+    width: 100%;
+}
+#mensaje{
+    height: 100px;
+    width: 100%;
+    resize: none;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.img_footer{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: white;
+}
+#button_home{
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    bottom: 90px;
+    right: 10px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 

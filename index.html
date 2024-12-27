@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Tomás Lardizábal 🧑‍💻</title>
+    <meta name="description" content="Portfolio de Tomás Lardizábal, estudiante de Ingeniería en Sistemas de Información">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#900">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&family=Lora:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header class="cabecera" id="home">
+        <h1 id="titulo">TL🧑‍💻</h1>
+        <nav class="nav_menu">
+            <a href="#titulo"><button class="anchor_button">Inicio</button></a>
+            <a href="#proyectos"><button class="anchor_button">Proyectos</button></a>
+            <a href="#seccion_contacto"><button class="anchor_button">Contacto</button></a>
+            <a><button class="anchor_button">Descargar CV</button></a>            
+        </nav>
+    </header>
+    
+    <script>
+        // Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, muestra el botón
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("button_home");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // Cuando el usuario hace clic en el botón, desplázate hacia arriba de la página
+        document.getElementById('button_home').addEventListener('click', function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+
+    <main>
+    <div id="container_aboutme">
+        <section class="seccion" id="aboutme">
+            <h2 id="h2_aboutme">¡BIENVENIDOS!</h2>
+            <p>Soy Tomás Lardizábal, estudiante de Ingeniería en Sistemas de Información y próximo desarrollador FULLSTACK.</p>
+        </section>
+        <section class="seccion" id="img_aboutme">
+            <img src="/images/img_tomas.jpg" id="img_tomas">
+        </section>
+        
+    </div>
+        
+        <section class="seccion">
+            <h2 id="proyectos">Proyectos realizados</h2>
+        </section>
+        
+
+        <section class="seccion">
+            <header>
+                <h2>Mis tecnologías favoritas</h2>
+            </header>
+            <p>Estas son las tecnologías que más me gustan y con las que más me siento cómodo trabajando:</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>C# y .NET</li>
+                    <li>SQL</li>
+                </ul>
+        </section>
+
+        <section class="seccion" id="seccion_contacto">
+            <h2>Formulario de contacto</h2>
+            <form method="post" action="/" >
+                <div class="form_div">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name" required class="form_input">
+                </div>
+                <div class="form_div">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required class="form_input">
+                </div>
+                <div class="form_div">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea type="text" name="mensaje" id="mensaje" required></textarea>
+                </div> 
+                <button type="submit" id="boton_enviar">Enviar</button>                              
+            </form>
+        </section>
+    </main>
+    <a href="#home" id="button_home"><img src="/images/flecha_arriba.png" class="img_footer"></a>
+    <footer class="footer" id="contacto">
+        <p>© 2024 Tomás Lardizábal.</p>
+        <div>
+            <a href="https://github.com/tomaslardizabal" target="_blank"><img src="/images/github.png" class="img_footer"></a>
+            <a href="https://www.linkedin.com/in/tom%C3%A1s-lardiz%C3%A1bal/" target="_blank"><img src="/images/linkedin.png" class="img_footer"></a>
+            <a href="https://www.instagram.com/tomas.lardizabal/" target="_blank"><img src="/images/instagram.png" class="img_footer"></a>     
+        </div>
+    </footer>
+
+</body>
+</html>
