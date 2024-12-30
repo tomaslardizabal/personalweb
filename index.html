@@ -24,23 +24,7 @@
     </header>
     
     <script>
-        // Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, muestra el botón
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            const scrollToTopBtn = document.getElementById("button_home");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
-        }
-
-        // Cuando el usuario hace clic en el botón, desplázate hacia arriba de la página
-        document.getElementById('button_home').addEventListener('click', function() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
+        
     </script>
 
     <main>
@@ -102,6 +86,6 @@
             <a href="https://www.instagram.com/tomas.lardizabal/" target="_blank"><img src="/images/instagram.png" class="img_footer"></a>     
         </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
