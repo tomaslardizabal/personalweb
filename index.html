@@ -11,39 +11,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
     <header class="cabecera" id="home">
         <h1 id="titulo">TL🧑‍💻</h1>
         <nav class="nav_menu">
-            <a href="#titulo"><button class="anchor_button">Inicio</button></a>
+            <a href="#home"><button class="anchor_button">Inicio</button></a>
             <a href="#proyectos"><button class="anchor_button">Proyectos</button></a>
             <a href="#seccion_contacto"><button class="anchor_button">Contacto</button></a>
-            <a><button class="anchor_button">Descargar CV</button></a>            
+            <a href="Tomas_Lardizabal_CV.pdf" download="Tomás_Lardizábal_CV.pdf"><button class="anchor_button">Descargar CV</button></a>            
         </nav>
     </header>
-    
-    <script>
-        
-    </script>
 
     <main>
-    <div id="container_aboutme">
-        <section class="seccion" id="aboutme">
-            <h2 id="h2_aboutme">¡BIENVENIDOS!</h2>
-            <p>Soy Tomás Lardizábal, estudiante de Ingeniería en Sistemas de Información y próximo desarrollador FULLSTACK.</p>
-        </section>
-        <section class="seccion" id="img_aboutme">
-            <img src="/images/img_tomas.jpg" id="img_tomas">
-        </section>
-        
-    </div>
-        
+        <div id="container_aboutme">
+            <section class="seccion" id="aboutme">
+                <h2 id="h2_aboutme">¡BIENVENIDOS!</h2>
+                <p>Soy Tomás Lardizábal, estudiante de Ingeniería en Sistemas de Información y próximo desarrollador FULLSTACK.</p>
+            </section>
+            <section class="seccion" id="img_aboutme">
+                <img src="/images/img_tomas.jpg" id="img_tomas">
+            </section>
+        </div>
         <section class="seccion">
             <h2 id="proyectos">Proyectos realizados</h2>
         </section>
-        
-
         <section class="seccion">
             <header>
                 <h2>Mis tecnologías favoritas</h2>
@@ -57,10 +48,9 @@
                     <li>SQL</li>
                 </ul>
         </section>
-
         <section class="seccion" id="seccion_contacto">
             <h2>Formulario de contacto</h2>
-            <form method="POST" action="https://formspree.io/f/xpwwpnje" >
+            <form id="contact_form" method="POST" action="https://formspree.io/f/xpwwpnje" >
                 <div class="form_div">
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="name" required class="form_input">
@@ -73,7 +63,7 @@
                     <label for="mensaje">Mensaje:</label>
                     <textarea type="text" name="mensaje" id="mensaje" required></textarea>
                 </div> 
-                <button type="submit" id="boton_enviar">Enviar</button>                              
+                <button type="submit" id="boton_enviar">Enviar</button>                      
             </form>
         </section>
     </main>

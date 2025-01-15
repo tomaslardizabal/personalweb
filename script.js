@@ -16,7 +16,7 @@ document.getElementById('button_home').addEventListener('click', function() {
     document.documentElement.scrollTop = 0;
 });
 
-const form = document.getElementById("contact-form");
+const form = document.getElementById("contact_form");
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault(); // Evita el comportamiento predeterminado del formulario
@@ -30,7 +30,7 @@ form.addEventListener("submit", async (event) => {
     });
 
     if (response.ok) {
-        window.location.href = "/thank-you.html"; // Redirige a la página de agradecimiento
+        window.location.href = "http://127.0.0.1:5500/#home"; // Redirige a la página de agradecimiento
     } else {
         alert("Hubo un problema al enviar el formulario.");
     }
