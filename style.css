@@ -27,24 +27,39 @@ gap: establece el espacio entre los elementos.
 justify-content: define como se distribuye el contenido en el eje principal (eje X).
 align-content: define como se distribuye el contenido en el eje cruzado (eje Y).
 */
-h1, h2 {
-    font-family: 'Montserrat', sans-serif; /* O la fuente que prefieras */
-}
-h2{
-    color: #FF4C4C;
-}
-p {
-    font-family: 'Roboto', sans-serif; /* Fuente para el cuerpo del texto */
+* {
+    /*box-sizing: border-box;*/
+    color: #ffffff;
+    font-family: "Sofia Sans Semi Condensed", sans-serif;
+    font-size: 20px;
 }
 
-body{
-    background-color: #1F1F1F;
+@keyframes moverGradiente {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+body {
+    background: linear-gradient(120deg, #000000, #ae1313, #000000);
+    background-size: 200% 200%;
+    animation: moverGradiente 4s infinite alternate;
+    width: 98%;
+    margin: 0 auto;
+}
+
+@media (min-width: 1024px) { /* Ajusta el tamaño según tu necesidad */
+    body {
+        width: 70%;
+    }
 }
 
 .cabecera{
     display: flex;
     flex: 8;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;    
@@ -52,27 +67,18 @@ body{
     font-size: 16px;
     padding-right: 8px;
     padding-left: 8px;
-    border: 2px solid #FF4C4C;
-    border-radius: 8px;
+    border: 2px solid #1f1f1fc9;
+    border-radius: 40px;
     z-index: 1000;
     top: 0;
     position: sticky;
 }
 
-#titulo{
-    margin-left: 20px;
-    padding: 0px 8px;
+.subtitle{
+    text-align: center;
     font-size: 2rem;
-    border-radius: 6px;
-    color: #FF4C4C;
 }
 
-#titulo:hover{
-    border: 0;
-    scale: 1.1;
-    color: #39FF14;
-    cursor: pointer;
-}
 .nav_menu{
     display: flex;
     flex: 2;
@@ -81,60 +87,106 @@ body{
     margin-right: 10px;
 }
 
+#titulo{
+    margin-left: 20px;
+    padding: 0px 8px;
+    font-size: 2rem;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+#titulo:hover{
+    border: 0;
+    scale: 1.1;
+    color: #df3737;
+    cursor: pointer;
+}
+
 .anchor_button{
     font-size: 1.2rem;
     padding: 4px;
     border-radius: 6px;
     border: 0;
-    color: #FF4C4C;
+    color: #ffffff;
     background-color: transparent;
 } 
 
 .anchor_button:hover{
     border: 0;
     scale: 1.1;
-    color: #39FF14;
+    color: #df3737;
     cursor: pointer;
+}
+
+#cv_button svg {
+    width: 24px;
+    height: 24px;
+    padding-left: 2px;
 }
 
 #container_aboutme{
     display: flex;
     justify-content: space-around;
-    height: 250px;
-    width: 100%;
+    height: 300px;
 }
 #aboutme{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
     flex: 7;
     margin-right: 12px;
     border: 0;
     border-radius: 16px 0px 0px 16px;
     width: 70vw;
     font-size: 1rem;
-    color: black;
+    color: #ffffffff;
+    background: #1f1f1fc9;
+    border-bottom: 100px;
 }
-#h2_aboutme{
-    text-align: center;
-    animation: moveWord 3.5s linear infinite alternate;
-    font-size: 2rem;
-    color: #FF4C4C;
-}
-@keyframes moveWord {
-    0% {
-        transform: translateX(-50px); 
+
+@keyframes typing {
+    from {
+        width: 0%;
     }
-    25% {
-        transform: translateX(-25px);
-    }
-    50%{
-        transform: translateX(0px);
-    }
-    75%{
-        transform: translateX(25px);
-    }
-    100% {
-        transform: translateX(50px);
+    to {
+        width: 100%;
     }
 }
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#h2_aboutme {
+    white-space: nowrap; /* Evita saltos de línea */
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+    animation: typing 5s steps(40, end) infinite forwards;
+    margin: 20px 0px;
+}
+
+#p_aboutme {
+    margin: 20px 10px;
+}
+
+#button_cv{
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 0;
+    color: #ffffff;
+    background: #ae1313b6;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#button_cv:hover{
+    background: #df3737;
+}
+
 #img_aboutme{
     display: flex;
     flex: 3;
@@ -145,50 +197,103 @@ body{
 #img_tomas{    
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border-radius: 0px 16px 16px 0px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 
-.seccion{
-    background-color: #F5F5F5;
+.container{
+    background: #1f1f1fc9;
     padding: 10px 20px 10px 20px;
     border-radius: 8px;
     margin-top: 20px;
 }
 
+#projects{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 28px;
+    margin: 20px 0px;
+}
+
+.project{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: #ae1313b6;
+    color: #ffffff;
+    width: 300px;
+    height: 300px;
+}
+
+.button_project{
+    padding: 6px;
+    border-radius: 6px;
+    color: #ae1313b6;
+    background: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button_project:hover{
+    color: white;
+    background: #df3737;
+}
+
+#tecnologies{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#tecnologies_icons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 0px 40px 20px 40px;
+}
 
 #seccion_contacto{
     display: flex;
     flex-direction: row;
     padding: 10px;
-    max-width: 400px;
-    margin: 20px auto;
+    max-width: 550px;
+    margin: 40px auto;
     align-items: center;
-    color: #FF4C4C;
 }
 
 form{
     padding: 0px 10px 0px 10px;
+    margin: 20px 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
     color: black;
 }
 
-#boton_enviar{
+#button_form{
     padding: 6px;
     border-radius: 6px;
     border: 1px solid black;
-    color: #FF4C4C;
+    color: #ae1313b6;
+    background: white;
     width: 100%;
     cursor: pointer;
     margin-top: 10px;
 }
 
-#boton_enviar:hover{
-    
-    color: #39FF14;
+#button_form:hover{
+    color: white;
+    background: #df3737;
 }
 
 .form_div{
@@ -211,7 +316,6 @@ form{
     display: flex;
     justify-content: space-between ;
     align-items: center;
-    background-color: #F5F5F5;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
@@ -219,28 +323,18 @@ form{
 }
 
 .img_footer{
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    border-radius: 50%;
     margin-right: 10px;
-    background-color: white;
 }
+
+.button_scroll{
+    display: none;
+}
+
 #button_home{
-    display: none; /* Oculto por defecto */
     position: fixed;
-    bottom: 90px;
+    bottom: 110px;
     right: 10px;
     z-index: 99;
-    border: none;
-    outline: none;
-    background-color: transparent;
     cursor: pointer;
     padding: 4px;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 } 

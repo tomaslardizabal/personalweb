@@ -1,14 +1,11 @@
-// Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, muestra el botón
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-    const scrollToTopBtn = document.getElementById("button_home");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollToTopBtn.style.display = "block";
+window.addEventListener("scroll", function () {
+    let scrollButton = document.getElementById("button_home");
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      scrollButton.classList.remove("button_scroll"); // Mostrar botón
     } else {
-        scrollToTopBtn.style.display = "none";
+      scrollButton.classList.add("button_scroll"); // Ocultar botón
     }
-}
+});
 
 // Cuando el usuario hace clic en el botón, desplázate hacia arriba de la página
 document.getElementById('button_home').addEventListener('click', function() {
